@@ -16,7 +16,7 @@ bytes = kb * 1024;
 float bits;
 bits = bytes * 8;
 
-cout<<"The Value Of "<<mb<<" MB in Bits is : "<<bits;
+cout<<"The Value Of "<<mb<<" MB in bits is : "<<bits<<" bits";
 
 
 
