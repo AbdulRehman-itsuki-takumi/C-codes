@@ -4,16 +4,20 @@ using namespace std;
 int main()
 {
     int choice = 0;
-    string name[3] , course[3];
+    string name[3]; 
+    string course[3];
     int age[3];
-    int i1=0,i2=0;
+    int i1=0;
+    int i2=0;
     string username[3];
     int password[3];
     for(int i = 0; i < 3; i++)
     {
-        cout<<"Enter username: ";cin>>username[i];
+        cout<<"Enter username : ";
+        cin>>username[i];
 
-        cout<<"Enter password: ";cin>>password[i];
+        cout<<"Enter password : ";
+        cin>>password[i];
 
         if(username[i] == "admin" && password[i] == 1234)
         {
@@ -27,17 +31,17 @@ int main()
                 cout<<"3--> Add Course\n";
                 cout<<"4--> View Course\n";
                 cout<<"5--> Exit\n";
-                cout<<"Your Choice: ";
+                cout<<"Your Choice : ";
                 cin>>choice;
 
                 if(choice == 1)
                 {
                     if(i1 < 3)
                     {
-                        cout<<"Enter name: ";
+                        cout<<"Enter name : ";
                         cin>>name[i1];
 
-                        cout<<"Enter age: ";
+                        cout<<"Enter age : ";
                         cin>>age[i1];
 
                         i1++;
@@ -60,7 +64,7 @@ int main()
                 {
                     if(i2 < 3)
                     {
-                        cout<<"Enter course name: ";
+                        cout<<"Enter course name : ";
                         cin>>course[i2];
 
                         i2++;
@@ -75,7 +79,7 @@ int main()
                 {
                     for (int d=0;d<i2;d++)
                     {
-                        cout<<"Course "<<d+1<<": "<<course[d]<<endl;
+                        cout<<"Course "<<d+1<<" : "<<course[d]<<endl;
                     }
                 }
                 
