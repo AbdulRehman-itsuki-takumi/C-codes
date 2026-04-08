@@ -3,21 +3,23 @@
 using namespace std;
 main()
 {
+    //this code is completely written by me no ai is used so dont try to steal it make your own
+    //some ideas are totally mine like color chaning and cls using in some places
     int total_students = 1000;
-    int index = 3;
+    int index = 0;
     int seats_CS = 2;
     int seats_CE = 2;
     int seats_EE = 2;
 
-    string stu_names[total_students] = {"itsuki", "eren", "mikasa"};
-    int stu_age[total_students] = {18, 20, 19};
-    float stu_matric_marks[total_students] = {980, 1090, 1090};
-    float stu_inter_marks[total_students] = {560, 400, 388};
-    float stu_ecat_marks[total_students] = {220, 340, 290};
-    float stu_aggregate[total_students] = {89.900, 91.762, 79.762};
-    string stu_pref1[total_students] = {"CS", "CE", "EE"};
-    string stu_pref2[total_students] = {"EE", "CS", "CE"};
-    string stu_pref3[total_students] = {"CE", "EE", "CS"};
+    string stu_names[total_students];
+    int stu_age[total_students];
+    float stu_matric_marks[total_students];
+    float stu_inter_marks[total_students];
+    float stu_ecat_marks[total_students];
+    float stu_aggregate[total_students];
+    string stu_pref1[total_students];
+    string stu_pref2[total_students];
+    string stu_pref3[total_students];
     string stu_department[1000]; // to store allocated department
 
     while (true)
@@ -452,7 +454,7 @@ main()
         {
             // Student Code
             system("cls");
-            system("color 97");
+            system("color 90");
             // Taking data From Student
             cout << "---------------------------------------------------" << endl;
             cout << "--------- UNIVERSITY MANAGEMENT SYSTEM ------------" << endl;

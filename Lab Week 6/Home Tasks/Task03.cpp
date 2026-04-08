@@ -1,21 +1,38 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 int main()
 {
-    int num_elements,even=0;
-    cout<<"Enter number of elements: ";cin>>num_elements;
-    int array[num_elements];
-    cout<<"Enter "<<num_elements<<" numbers: ";
-    for (int idx=0;idx<num_elements;idx++)
-    {
-        cin>>array[idx];
-        if (array[idx]%2==0)
-        {
-            even+=1;
-        }
-        
-    }
-    cout<<"Total even numbers: "<<even;
+    int n;
 
+    cout << "Enter number of elements : ";
+    cin >> n;
+
+    int arr[n];
+
+    cout << "Enter " << n << " numbers:" << endl;
+    for(int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+
+    int largest = arr[0];
+    int smallest = arr[0];
+
+    for(int i = 1; i < n; i++)
+    {
+        if(arr[i] > largest)
+        {
+            largest = arr[i];
+        }
+
+        if(arr[i] < smallest)
+        {
+            smallest = arr[i];
+        }
+    }
+
+    cout << "Largest Number: " << largest << endl;
+    cout << "Smallest Number: " << smallest << endl;
+    
 }

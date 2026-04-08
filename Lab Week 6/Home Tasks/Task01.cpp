@@ -3,15 +3,20 @@ using namespace std;
 
 int main()
 {
-    int i,sum=0;
-    cout<<"Enter number of elements: ";cin>>i;
+    int i = 0;
+    int sum = 0;
+
+    cout<<"Enter Number Of Elements : ";
+    cin>>i;
+
     int array[i];
-    cout<<"Enter "<<i<<" numbers: ";
-    for (int idx=0;idx<i;idx++)
+
+    cout<<"Enter "<<i<<" Numbers Below"<<endl;
+    for (int idx = 0; idx < i; idx++)
     {
         cin>>array[idx];
-        sum+=array[idx];
+        sum += array[idx];
     }
-    cout<<"Sum of all elements: "<<sum;
+    cout<<"Sum Of All Elements : "<<sum;
 
 }

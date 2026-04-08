@@ -1,14 +1,26 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
+
 int main()
 {
-    string word;
-    cout<<"Enter a word: ";
-    cin>>word;
-    cout<<"Reversed word: ";
-    for (int i = word.length() - 1; i >= 0; i--)
+    char str[100];
+
+    cout << "Enter a string : ";
+    cin >> str;
+
+    int i = 0;
+
+
+    while(str[i] != '\0')
     {
-        cout<<word[i];
-    } 
-    
+        i++;
+    }
+
+    cout << "Reversed String: ";
+
+    // Print in reverse
+    for(int j = i - 1; j >= 0; j--)
+    {
+        cout << str[j];
+    }
 }
