@@ -3,13 +3,14 @@ using namespace std;
 int main()
 {
     int n;
-    cout<<"Enter the number of elements: ";cin>>n;
+    cout<<"Enter the number of elements: ";
+    cin>>n;
     if (n <= 0)
     {
         cout<<"Invalid input. Please enter a number greater than 0."<<endl;
     }
     int array[n];
-    cout<<"Enter the elements: ";
+    cout<<"Enter the elements : ";
     for (int i = 0; i < n; i++)
     {
         cin>>array[i];

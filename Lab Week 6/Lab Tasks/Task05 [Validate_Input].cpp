@@ -22,7 +22,7 @@ int main()
                 break;
             }
         }
-        if(!duplicate)
+        if(duplicate = true)
         {
             array[i] = num;
         }

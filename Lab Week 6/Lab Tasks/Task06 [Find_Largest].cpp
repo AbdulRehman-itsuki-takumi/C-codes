@@ -14,7 +14,7 @@ int main()
         cin>>array[i];
         if(array[i]>largest)
         {
-            largest=array[i];
+            largest = array[i];
         }
     } 
     cout<<"Largest number entered is: "<<largest;

@@ -12,7 +12,7 @@ int main()
     for (int i=0;i<n;i++)
     {
         cin>>array[i];
-        sum+=array[i];
+        sum = sum + array[i];
     } 
     cout<<"The total resistence of series circuit is: "<<sum;
 

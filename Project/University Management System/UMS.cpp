@@ -3,7 +3,7 @@
 using namespace std;
 main()
 {
-    //this code is completely written by me no ai is used so dont try to steal it make your own
+    //this code is completely written by me no ai is used
     //some ideas are totally mine like color chaning and cls using in some places
     int total_students = 1000;
     int index = 0;
