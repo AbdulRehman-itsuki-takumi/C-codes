@@ -4,7 +4,7 @@ using namespace std;
 int main()
 {
     float num1;
-    cout<<"Enter the Number :";
+    cout<<"Enter The Number : ";
     cin>>num1;
-    cout<<"The square Root of "<<num1<<" is :"<<sqrt(num1);
+    cout<<"The Square Root Of "<<num1<<" Is : "<<sqrt(num1);
 }

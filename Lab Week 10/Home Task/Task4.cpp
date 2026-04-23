@@ -20,21 +20,20 @@ float calculateSalary(float base, int score, int experience)
     return finalSalary;
 }
 
-int main()
+main()
 {
     float base;
     int score, experience;
 
-    cout << "Enter base salary: ";
+    cout << "Enter Base Salary : ";
     cin >> base;
 
-    cout << "Enter score: ";
+    cout << "Enter Score : ";
     cin >> score;
 
-    cout << "Enter experience (years): ";
+    cout << "Enter Experience (Years) : ";
     cin >> experience;
 
-    cout << "Final Salary: " << calculateSalary(base, score, experience);
+    cout << "Final Salary : " << calculateSalary(base, score, experience);
 
-    return 0;
 }

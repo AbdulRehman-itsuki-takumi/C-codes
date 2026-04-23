@@ -21,7 +21,7 @@ main()
     string usernames[20];
     string passwords[20];
     int userIndex = 0;
-    
+
     // USER LIBRARY CODE + CODE FOR ITS HISTORY
     int library[50];
     int libraryCount = 0;
@@ -188,16 +188,20 @@ main()
                             cin.ignore(); // i googled the solution that's why using here as sir gave the permission to use it
                             getline(cin, search);
 
+                            bool found = false;
+
                             for (int i = 0; i < gameCount; i++)
                             {
                                 if (gameNames[i] == search)
                                 {
                                     cout << gameNames[i] << " Is Present In Our Game Library." << endl;
+                                    found = true;
                                 }
-                                else
-                                {
-                                    cout << "No Game Found With This Name.";
-                                }
+                            }
+
+                            if (found == false)
+                            {
+                                cout << "No Game Found With This Name.";
                             }
                         }
                         else if (adminOption == "6") // sort games
@@ -320,11 +324,11 @@ main()
                         if (usernames[i] == userUsername && passwords[i] == userPassword)
                         {
                             found = true;
-                            currentUser = i; //just to remember which user logged in
+                            currentUser = i; // just to remember which user logged in
                         }
                     }
 
-                    if (found = true)
+                    if (found == true)
                     {
                         cout << "\nLogin Successfull!";
                         cout << "\nPress Any Key To Continue.....";
@@ -338,31 +342,31 @@ main()
                             cout << "-------------- JAPANESE GAME STORE ----------------" << endl;
                             cout << "---------------------------------------------------" << endl;
 
-                            cout << "\n--- "<<usernames[currentUser]<<"'s Account ---\n\n"; //this will display the name of whichever user is logged in
+                            cout << "\n--- " << usernames[currentUser] << "'s Account ---\n\n"; // this will display the name of whichever user is logged in
 
-                            cout<<"1. View Games"<<endl;
-                            cout<<"2. Buy Game"<<endl;
-                            cout<<"3. Refund Game"<<endl;
-                            cout<<"4. Your Library"<<endl;
-                            cout<<"5. Search Game"<<endl;
-                            cout<<"6. Sort Games Library"<<endl;
-                            cout<<"7. Apply Coupon"<<endl;
-                            cout<<"8. History Of Purchased Games"<<endl;
-                            cout<<"9. Account Settings"<<endl;
-                            cout<<"0. Exit"<<endl;
+                            cout << "1. View Games" << endl;
+                            cout << "2. Buy Game" << endl;
+                            cout << "3. Refund Game" << endl;
+                            cout << "4. Your Library" << endl;
+                            cout << "5. Search Game" << endl;
+                            cout << "6. Sort Games Library" << endl;
+                            cout << "7. Apply Coupon" << endl;
+                            cout << "8. History Of Purchased Games" << endl;
+                            cout << "9. Account Settings" << endl;
+                            cout << "0. Exit" << endl;
 
                             string userAccountOption;
-                            cout<<"\nChoose An Option : ";
+                            cout << "\nChoose An Option : ";
                             cin >> userAccountOption;
 
-                            if (userAccountOption == "1") //To view games
+                            if (userAccountOption == "1") // To view games
                             {
                                 system("cls");
                                 cout << "---------------------------------------------------" << endl;
                                 cout << "-------------- JAPANESE GAME STORE ----------------" << endl;
                                 cout << "---------------------------------------------------" << endl;
 
-                                cout << "\n--- "<<usernames[currentUser]<<"'s Account ---\n\n";
+                                cout << "\n--- " << usernames[currentUser] << "'s Account ---\n\n";
 
                                 for (int i = 0; i < gameCount; i++)
                                 {
@@ -377,7 +381,7 @@ main()
                                 cout << "-------------- JAPANESE GAME STORE ----------------" << endl;
                                 cout << "---------------------------------------------------" << endl;
 
-                                cout << "\n--- "<<usernames[currentUser]<<"'s Account ---\n\n";
+                                cout << "\n--- " << usernames[currentUser] << "'s Account ---\n\n";
 
                                 for (int i = 0; i < gameCount; i++)
                                 {
@@ -389,7 +393,7 @@ main()
                                 cin >> n;
 
                                 bool gameOwned = false;
-                                for (int i = 0; i < gameCount; i++) // this loop is to check wether user already own the game or not
+                                for (int i = 0; i < libraryCount; i++) // this loop is to check wether user already own the game or not
                                 {
                                     if (library[i] == n - 1)
                                     {
@@ -397,7 +401,7 @@ main()
                                     }
                                 }
 
-                                if (gameOwned = true)
+                                if (gameOwned == true)
                                 {
                                     cout << "\nGreat! You Already Own This Game! Isn't It A Masterpiece!!";
                                 }
@@ -412,16 +416,16 @@ main()
                                     if (coupon == "SAVE10")
                                     {
                                         price = price - (price * 10 / 100);
-                                        cout<<"Coupen Code Applied Successfully!\nYou Got 10 Percent Discount On This Beatifull Game\nEnjoy!!!! :)";
+                                        cout << "Coupen Code Applied Successfully!\nYou Got 10 Percent Discount On This Beatifull Game\nEnjoy!!!! :)";
                                     }
                                     else if (coupon == "SAVE20")
                                     {
                                         price = price - (price * 20 / 100);
-                                        cout<<"Coupen Code Applied Successfully!\nYou Got 20 Percent Discount On This Beatifull Game\nEnjoy!!!! :)";
+                                        cout << "Coupen Code Applied Successfully!\nYou Got 20 Percent Discount On This Beatifull Game\nEnjoy!!!! :)";
                                     }
                                     else
                                     {
-                                        cout<<"This Coupen Is Not Available.\nPlease Check Your Coupen Code.";
+                                        cout << "This Coupen Is Not Available.\nPlease Check Your Coupen Code.";
                                     }
 
                                     library[libraryCount++] = n - 1;
@@ -430,7 +434,8 @@ main()
                                     // HISTORY FOR LAST 5 PURCHASES
                                     if (historyCount < 5)
                                     {
-                                        history[historyCount + 1] = n - 1;
+                                        history[historyCount] = n - 1;
+                                        historyCount++;
                                     }
                                     else
                                     {
@@ -445,7 +450,7 @@ main()
                                 }
                             }
 
-                            else if (userAccountOption == "3") //To refund games
+                            else if (userAccountOption == "3") // To refund games
                             {
                                 system("cls");
                                 cout << "---------------------------------------------------" << endl;
@@ -492,16 +497,24 @@ main()
                                 cin.ignore();
                                 getline(cin, s);
 
+                                bool found = false;
+
                                 for (int i = 0; i < gameCount; i++)
                                 {
                                     if (gameNames[i] == s)
                                     {
-                                        cout << "Found\n";
+                                        cout << "Game Found\n";
+                                        found = true;
                                     }
+                                }
+
+                                if (found == false)
+                                {
+                                    cout << "Game Not Found\n";
                                 }
                             }
 
-                            else if (userAccountOption == "6") //to sort your library games
+                            else if (userAccountOption == "6") // to sort your library games
                             {
                                 for (int i = 0; i < gameCount; i++)
                                 {
@@ -509,14 +522,22 @@ main()
                                     {
                                         if (gamePrices[i] > gamePrices[j])
                                         {
-                                            swap(gamePrices[i], gamePrices[j]);
-                                            swap(gameNames[i], gameNames[j]);
-                                            swap(gameSold[i], gameSold[j]);
+                                            int tempPrice = gamePrices[i];
+                                            gamePrices[i] = gamePrices[j];
+                                            gamePrices[j] = tempPrice;
+
+                                            string tempName = gameNames[i];
+                                            gameNames[i] = gameNames[j];
+                                            gameNames[j] = tempName;
+
+                                            int tempSold = gameSold[i];
+                                            gameSold[i] = gameSold[j];
+                                            gameSold[j] = tempSold;
                                         }
                                     }
                                 }
 
-                                cout<<"Library Sorted.";
+                                cout << "Library Sorted.";
                             }
 
                             else if (userAccountOption == "7") // To apply coupen
@@ -534,7 +555,7 @@ main()
                                 cout << "Your Recent Purchases Are:\n";
                                 for (int i = 0; i < historyCount; i++)
                                 {
-                                    cout <<i + 1 <<". "<< gameNames[history[i]] << endl;
+                                    cout << i + 1 << ". " << gameNames[history[i]] << endl;
                                 }
                             }
 
@@ -544,17 +565,17 @@ main()
                             }
                             else
                             {
-                                cout<<"Inavlid Option. Try Again."<<endl;
+                                cout << "Inavlid Option. Try Again." << endl;
                             }
 
-                            cout<<"\nPress Any Key To Countinue.......";    
+                            cout << "\nPress Any Key To Countinue.......";
                             getch();
                         }
                     }
                     else
                     {
                         cout << "Wrong Login!";
-                        cout<<"\nPress Any Key To Continue......";
+                        cout << "\nPress Any Key To Continue......";
                         getch();
                     }
                 }

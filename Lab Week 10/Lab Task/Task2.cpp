@@ -2,12 +2,11 @@
 #include<windows.h>
 using namespace std;
 
-int main()
+main()
 {
     while(true)
     {
-        cout<<"name :";
+        cout<<"Name : ";
         Sleep(200);
     }
-    return 0;
 }

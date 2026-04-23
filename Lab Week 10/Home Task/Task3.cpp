@@ -20,7 +20,7 @@ float taxCalculator(char type, float price)
     return finalPrice;
 }
 
-int main()
+main()
 {
     char type;
     float price;
@@ -35,5 +35,4 @@ int main()
 
     cout << "Final price of vehicle type " << type << " is $" << result;
 
-    return 0;
 }
