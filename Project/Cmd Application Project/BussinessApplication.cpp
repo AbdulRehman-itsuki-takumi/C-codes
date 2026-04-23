@@ -29,6 +29,18 @@ main()
     int history[5];
     int historyCount = 0;
 
+    system("cls");
+    system("color 60");
+
+    cout << "---------------------------------------------------" << endl;
+    cout << "-------------- JAPANESE GAME STORE ----------------" << endl;
+    cout << "---------------------------------------------------" << endl;
+    cout<<endl;
+    cout<<"\n\tWELCOME IN THE HEAVEN OF GAMES."<<endl;
+    cout<<"\tHERE YOU CAN BUY DIFFERENT TYPE OF GAMES"<<endl;
+    cout<<"\n\n\tPress Any Key To Continue......";
+    getch();
+
     while (true)
     {
         system("cls");
