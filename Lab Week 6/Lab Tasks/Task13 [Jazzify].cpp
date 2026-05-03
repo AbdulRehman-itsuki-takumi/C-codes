@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
-int main() {
+main()
+{
     int array[5];
     array[0] = 19;
     array[1] = 20;
@@ -13,5 +14,4 @@ int main() {
     cout << "The third element of the array is: " << array[2] << endl;
     cout << "The fourth element of the array is: " << array[3] << endl;
     cout << "The fifth element of the array is: " << array[4] << endl;
-
 }

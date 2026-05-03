@@ -1,13 +1,13 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-int main()
+main()
 {
     string word;
-    cout<<"Enter a word : ";
-    cin>>word;
+    cout << "Enter a word : ";
+    cin >> word;
     char letter;
-    cout<<"Enter a letter : ";
-    cin>>letter;
+    cout << "Enter a letter : ";
+    cin >> letter;
     bool found = false;
     for (int i = 0; word[i] != '\0'; i++)
     {
@@ -25,5 +25,4 @@ int main()
     {
         cout << letter << " not found in the word " << word << endl;
     }
-
 }

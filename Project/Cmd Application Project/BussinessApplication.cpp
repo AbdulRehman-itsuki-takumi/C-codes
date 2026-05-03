@@ -364,7 +364,7 @@ main()
                             cout << "6. Sort Games Library" << endl;
                             cout << "7. Apply Coupon" << endl;
                             cout << "8. History Of Purchased Games" << endl;
-                            cout << "9. Account Settings" << endl;
+                         // cout << "9. Account Settings" << endl; maybe used later
                             cout << "0. Exit" << endl;
 
                             string userAccountOption;
@@ -428,16 +428,21 @@ main()
                                     if (coupon == "SAVE10")
                                     {
                                         price = price - (price * 10 / 100);
-                                        cout << "Coupen Code Applied Successfully!\nYou Got 10 Percent Discount On This Beatifull Game\nEnjoy!!!! :)";
+                                        cout << "Coupen Code Applied Successfully!\nYou Got 10 Percent Discount On This Beatifull Game\nEnjoy!!!! :)"<<endl;
                                     }
                                     else if (coupon == "SAVE20")
                                     {
                                         price = price - (price * 20 / 100);
-                                        cout << "Coupen Code Applied Successfully!\nYou Got 20 Percent Discount On This Beatifull Game\nEnjoy!!!! :)";
+                                        cout << "Coupen Code Applied Successfully!\nYou Got 20 Percent Discount On This Beatifull Game\nEnjoy!!!! :)"<<endl;
+                                    }
+                                    else if(coupon == "None")
+                                    {
+                                        cout<<"No Coupen Code Is Applied Original Price Will Be Applied."<<endl;
+
                                     }
                                     else
                                     {
-                                        cout << "This Coupen Is Not Available.\nPlease Check Your Coupen Code.";
+                                        cout << "This Coupen Is Not Available.\nPlease Check Your Coupen Code."<<endl;
                                     }
 
                                     library[libraryCount++] = n - 1;

@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int main()
+main()
 {
     char str[100];
 
@@ -10,8 +10,7 @@ int main()
 
     int i = 0;
 
-
-    while(str[i] != '\0')
+    while (str[i] != '\0')
     {
         i++;
     }
@@ -19,7 +18,7 @@ int main()
     cout << "Reversed String: ";
 
     // Print in reverse
-    for(int j = i - 1; j >= 0; j--)
+    for (int j = i - 1; j >= 0; j--)
     {
         cout << str[j];
     }

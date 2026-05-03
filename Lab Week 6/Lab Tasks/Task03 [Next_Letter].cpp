@@ -1,14 +1,13 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-int main()
+main()
 {
     string word;
-    cout<<"Enter a word : ";
-    cin>>word;
-    cout<<"shifted word : ";
+    cout << "Enter a word : ";
+    cin >> word;
+    cout << "shifted word : ";
     for (int i = 0; word[i] != '\0'; i++)
     {
         cout << char(word[i] + 1);
     }
-
 }

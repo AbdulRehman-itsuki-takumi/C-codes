@@ -1,19 +1,18 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-int main()
+main()
 {
-    float sum=0;
+    float sum = 0;
     int n;
-    cout<<"Enter number of resistors in series: ";
-    cin>>n;
+    cout << "Enter number of resistors in series: ";
+    cin >> n;
     float array[n];
-    cout<<"Enter resistence values (in ohms) for "<<n<<" resistors, one per line:"<<endl;
-    for (int i=0;i<n;i++)
+    cout << "Enter resistence values (in ohms) for " << n << " resistors, one per line:" << endl;
+    for (int i = 0; i < n; i++)
     {
-        cin>>array[i];
+        cin >> array[i];
         sum = sum + array[i];
-    } 
-    cout<<"The total resistence of series circuit is: "<<sum;
-
+    }
+    cout << "The total resistence of series circuit is: " << sum;
 }
