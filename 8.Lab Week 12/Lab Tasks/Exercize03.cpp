@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+
+main() 
+{
+    int y = 20;
+    int &ref = y;
+
+    cout << "Original value of y : " << y << endl;
+    ref = 30; // Modifying through reference
+    cout << "Modified value of y : " << y << endl;
+
+}
