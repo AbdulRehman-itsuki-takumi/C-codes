@@ -4,7 +4,7 @@ using namespace std;
 
 main()
 {
-    // GAME STORE DATA
+    // GAME STORE DATA (ALready putting some games and prices)
     int totalGames = 20;
     int gameCount = 20;
     int gameSold[50] = {0};
@@ -30,8 +30,7 @@ main()
     int historyCount = 0;
 
     system("cls");
-    system("color 60");
-
+    system("color 60"); // color code 60 is for yellow bg and black text
     cout << "---------------------------------------------------" << endl;
     cout << "-------------- JAPANESE GAME STORE ----------------" << endl;
     cout << "---------------------------------------------------" << endl;
@@ -64,7 +63,7 @@ main()
             for (int i = 3; i > 0; i--)
             {
                 system("cls");
-                system("color C0");
+                system("color C0"); // color code C0 is for light red bg and black text
 
                 cout << "---------------------------------------------------" << endl;
                 cout << "-------------- JAPANESE GAME STORE ----------------" << endl;
@@ -152,7 +151,7 @@ main()
                             cout << "\nEnter Game Number : ";
                             cin >> n;
                             cout << "\nOld Price For This Game Is : Rs" << gamePrices[n - 1];
-                            cout << "Enter New Price For This Game : ";
+                            cout << "\nEnter New Price For This Game : ";
                             cin >> gamePrices[n - 1];
 
                             cout << "\nGame Price Has Been Updated Successfully.";
@@ -241,7 +240,7 @@ main()
                                     }
                                 }
                             }
-                            cout << "\nGames List Has Been Sorted.";
+                            cout << "\nGames List Has Been Sorted In An Accending Order Of Price.";
                         }
                         else if (adminOption == "7") // total sales
                         {
@@ -293,7 +292,7 @@ main()
             while (true)
             {
                 system("cls");
-                system("color 90");
+                system("color 90"); // color code 90 is for sky blue(cyan) bg and black text
                 cout << "---------------------------------------------------" << endl;
                 cout << "-------------- JAPANESE GAME STORE ----------------" << endl;
                 cout << "---------------------------------------------------" << endl;
@@ -306,7 +305,7 @@ main()
                 cout << "\nChoose An Option : ";
                 cin >> userOption;
 
-                if (userOption == "1")
+                if (userOption == "1") // Sign Up
                 {
                     cout << "\nUsername : ";
                     cin >> usernames[userIndex];
@@ -317,7 +316,7 @@ main()
                     getch();
                 }
 
-                else if (userOption == "2")
+                else if (userOption == "2") // Login
                 {
                     string userUsername;
                     string userPassword;
@@ -364,7 +363,8 @@ main()
                             cout << "6. Sort Games Library" << endl;
                             cout << "7. Apply Coupon" << endl;
                             cout << "8. History Of Purchased Games" << endl;
-                         // cout << "9. Account Settings" << endl; maybe used later
+                         // cout << "9. Account Settings" << endl; maybe i'll add this later
+                         //cout << "10. Check Wallet" << endl; i have to manage all the games buying with this money system so i'll plan this later
                             cout << "0. Exit" << endl;
 
                             string userAccountOption;
@@ -422,7 +422,7 @@ main()
                                     int price = gamePrices[n - 1];
 
                                     string coupon;
-                                    cout << "Enter Coupon (or NONE) : ";
+                                    cout << "Enter Coupon (or None) : ";
                                     cin >> coupon;
 
                                     if (coupon == "SAVE10")
@@ -510,6 +510,7 @@ main()
                                 cout << "-------------- JAPANESE GAME STORE ----------------" << endl;
                                 cout << "---------------------------------------------------" << endl;
 
+                                cout<<"Enter Game Name : ";
                                 string s;
                                 cin.ignore();
                                 getline(cin, s);
@@ -574,6 +575,26 @@ main()
                                 {
                                     cout << i + 1 << ". " << gameNames[history[i]] << endl;
                                 }
+                            }
+                            else if (userAccountOption == "9") // account settings for changing username and pasword
+                            {
+                                system("cls");
+                                cout << "---------------------------------------------------" << endl;
+                                cout << "-------------- JAPANESE GAME STORE ----------------" << endl;
+                                cout << "---------------------------------------------------" << endl;
+
+                                cout<<"\n You Can Change Your Username And Password Here."<<endl;
+                                cout<<"\nUnfortunately This Option Is Not Available Right Now"<<endl;
+                            }
+                            else if (userAccountOption == "10") // check wallet for user balance 
+                            {
+                                system("cls");
+                                cout << "---------------------------------------------------" << endl;
+                                cout << "-------------- JAPANESE GAME STORE ----------------" << endl;
+                                cout << "---------------------------------------------------" << endl;
+
+                                cout<<"\n You Can See Your Wallet Balance And Top Up Your Balance Here"<<endl;
+                                cout<<"\nUnfortunately This Option Is Not Available Right Now"<<endl;
                             }
 
                             else if (userAccountOption == "0") // to log out
