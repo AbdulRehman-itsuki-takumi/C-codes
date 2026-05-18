@@ -1,0 +1,64 @@
+21
+Resident Evil 4
+5000
+1
+Elden Ring
+7000
+0
+Persona 5 Royal
+6000
+0
+Sekiro
+6500
+0
+GTA V
+4000
+0
+Nier Automata
+5500
+0
+Dark Souls 3
+6200
+0
+Cyberpunk 2077
+6800
+0
+Hollow Knight Silksong
+3000
+0
+God Of War
+7200
+0
+Spiderman
+7100
+0
+Tekken 7
+3500
+0
+Street Fighter 6
+3600
+0
+Read Dead Redemption 2
+7500
+0
+Call Of Duty
+5000
+0
+Battlefield 5
+4800
+0
+Assassin Creed
+5300
+0
+Ghost of Tsushima
+6900
+0
+Final Fantasy XV
+6100
+0
+Silent Hill 2
+5800
+0
+Omori
+1200
+0

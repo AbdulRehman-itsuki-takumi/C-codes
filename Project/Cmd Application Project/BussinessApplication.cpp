@@ -4,11 +4,11 @@ using namespace std;
 
 main()
 {
-    // GAME STORE DATA (ALready putting some games and prices)
     int totalGames = 20;
     int gameCount = 20;
     int gameSold[50] = {0};
 
+      // My Favorite Games :) 
     string gameNames[50] = {"Resident Evil 4", "Elden Ring", "Persona 5 Royal", "Sekiro", "GTA V",
                             "Nier Automata", "Dark Souls 3", "Cyberpunk 2077", "Hollow Knight Silksong", "God Of War",
                             "Spiderman", "Tekken 7", "Street Fighter 6", "Read Dead Redemption 2", "Call Of Duty",
@@ -17,12 +17,10 @@ main()
     int gamePrices[50] = {5000, 7000, 6000, 6500, 4000, 5500, 6200, 6800, 3000, 7200,
                           7100, 3500, 3600, 7500, 5000, 4800, 5300, 6900, 6100, 5800};
 
-    // USER DATA
     string usernames[20];
     string passwords[20];
     int userIndex = 0;
 
-    // USER LIBRARY CODE + CODE FOR ITS HISTORY
     int library[50];
     int libraryCount = 0;
 
@@ -30,7 +28,7 @@ main()
     int historyCount = 0;
 
     system("cls");
-    system("color 60"); // color code 60 is for yellow bg and black text
+    system("color 60");
     cout << "---------------------------------------------------" << endl;
     cout << "-------------- JAPANESE GAME STORE ----------------" << endl;
     cout << "---------------------------------------------------" << endl;
@@ -51,19 +49,18 @@ main()
 
         cout << "\n  1. Admin";
         cout << "\n  2. User";
-        cout << "\n  0. Exit"; // using 0 for exit cuz its easy to exit fastly while testing
+        cout << "\n  0. Exit";
 
         cout << "\n\n Select An Option : ";
         string mainOption;
         cin >> mainOption;
 
-        // ADMIN LOGIN AREA AND CODE
         if (mainOption == "1")
         {
             for (int i = 3; i > 0; i--)
             {
                 system("cls");
-                system("color C0"); // color code C0 is for light red bg and black text
+                system("color C0");
 
                 cout << "---------------------------------------------------" << endl;
                 cout << "-------------- JAPANESE GAME STORE ----------------" << endl;
@@ -106,7 +103,7 @@ main()
                         cin >> adminOption;
                         cout << endl;
 
-                        if (adminOption == "1") // show all games
+                        if (adminOption == "1")
                         {
                             system("cls");
                             cout << "---------------------------------------------------" << endl;
@@ -119,7 +116,7 @@ main()
                                 cout << i + 1 << "." << gameNames[i] << "   ------  Rs." << gamePrices[i] << endl;
                             }
                         }
-                        else if (adminOption == "2") // add an extra game
+                        else if (adminOption == "2") 
                         {
                             system("cls");
                             cout << "---------------------------------------------------" << endl;
@@ -135,7 +132,7 @@ main()
 
                             cout << "Game Name And Price Has Been Added Successfully.";
                         }
-                        else if (adminOption == "3") // update the price of any game
+                        else if (adminOption == "3")
                         {
                             system("cls");
                             cout << "---------------------------------------------------" << endl;
@@ -156,7 +153,7 @@ main()
 
                             cout << "\nGame Price Has Been Updated Successfully.";
                         }
-                        else if (adminOption == "4") // delete any game
+                        else if (adminOption == "4")
                         {
                             system("cls");
                             cout << "---------------------------------------------------" << endl;
@@ -187,7 +184,7 @@ main()
 
                             cout << "\nGame Has Been Deleted Successfully.";
                         }
-                        else if (adminOption == "5") // search any game
+                        else if (adminOption == "5")
                         {
                             system("cls");
                             cout << "---------------------------------------------------" << endl;
@@ -196,7 +193,7 @@ main()
 
                             string search;
                             cout << "Enter Name : ";
-                            cin.ignore(); // i googled the solution that's why using here as sir gave the permission to use it
+                            cin.ignore();
                             getline(cin, search);
 
                             bool found = false;
@@ -215,7 +212,7 @@ main()
                                 cout << "No Game Found With This Name.";
                             }
                         }
-                        else if (adminOption == "6") // sort games
+                        else if (adminOption == "6") 
                         {
                             for (int i = 0; i < gameCount; i++)
                             {
@@ -223,17 +220,14 @@ main()
                                 {
                                     if (gamePrices[i] > gamePrices[j])
                                     {
-                                        // swaping game prices
                                         int tempPrice = gamePrices[i];
                                         gamePrices[i] = gamePrices[j];
                                         gamePrices[j] = tempPrice;
 
-                                        // swaping games names
                                         string tempName = gameNames[i];
                                         gameNames[i] = gameNames[j];
                                         gameNames[j] = tempName;
 
-                                        // swaping sold amounts
                                         int tempSold = gameSold[i];
                                         gameSold[i] = gameSold[j];
                                         gameSold[j] = tempSold;
@@ -242,7 +236,7 @@ main()
                             }
                             cout << "\nGames List Has Been Sorted In An Accending Order Of Price.";
                         }
-                        else if (adminOption == "7") // total sales
+                        else if (adminOption == "7")
                         {
                             int total = 0;
                             for (int i = 0; i < gameCount; i++)
@@ -251,7 +245,7 @@ main()
                             }
                             cout << "\nTotal Sales Are : Rs." << total << endl;
                         }
-                        else if (adminOption == "8") // most popular game
+                        else if (adminOption == "8")
                         {
                             int max = 0;
                             for (int i = 1; i < gameCount; i++)
@@ -264,7 +258,7 @@ main()
 
                             cout << "\nMost Popular Game Is: " << gameNames[max] << endl;
                         }
-                        else if (adminOption == "0") // exit
+                        else if (adminOption == "0")
                         {
                             cout << "Returning To Main Menu.......";
                             break;
@@ -286,13 +280,12 @@ main()
             }
         }
 
-        // USER LOGIN AREA AND CODE
         else if (mainOption == "2")
         {
             while (true)
             {
                 system("cls");
-                system("color 90"); // color code 90 is for sky blue(cyan) bg and black text
+                system("color 90");
                 cout << "---------------------------------------------------" << endl;
                 cout << "-------------- JAPANESE GAME STORE ----------------" << endl;
                 cout << "---------------------------------------------------" << endl;
@@ -305,7 +298,7 @@ main()
                 cout << "\nChoose An Option : ";
                 cin >> userOption;
 
-                if (userOption == "1") // Sign Up
+                if (userOption == "1")
                 {
                     cout << "\nUsername : ";
                     cin >> usernames[userIndex];
@@ -316,7 +309,7 @@ main()
                     getch();
                 }
 
-                else if (userOption == "2") // Login
+                else if (userOption == "2")
                 {
                     string userUsername;
                     string userPassword;
@@ -335,7 +328,7 @@ main()
                         if (usernames[i] == userUsername && passwords[i] == userPassword)
                         {
                             found = true;
-                            currentUser = i; // just to remember which user logged in
+                            currentUser = i; 
                         }
                     }
 
@@ -353,7 +346,7 @@ main()
                             cout << "-------------- JAPANESE GAME STORE ----------------" << endl;
                             cout << "---------------------------------------------------" << endl;
 
-                            cout << "\n--- " << usernames[currentUser] << "'s Account ---\n\n"; // this will display the name of whichever user is logged in
+                            cout << "\n--- " << usernames[currentUser] << "'s Account ---\n\n";
 
                             cout << "1. View Games" << endl;
                             cout << "2. Buy Game" << endl;
@@ -371,7 +364,7 @@ main()
                             cout << "\nChoose An Option : ";
                             cin >> userAccountOption;
 
-                            if (userAccountOption == "1") // To view games
+                            if (userAccountOption == "1")
                             {
                                 system("cls");
                                 cout << "---------------------------------------------------" << endl;
@@ -386,7 +379,7 @@ main()
                                 }
                             }
 
-                            else if (userAccountOption == "2") // To buy games
+                            else if (userAccountOption == "2")
                             {
                                 system("cls");
                                 cout << "---------------------------------------------------" << endl;
@@ -405,7 +398,7 @@ main()
                                 cin >> n;
 
                                 bool gameOwned = false;
-                                for (int i = 0; i < libraryCount; i++) // this loop is to check wether user already own the game or not
+                                for (int i = 0; i < libraryCount; i++)
                                 {
                                     if (library[i] == n - 1)
                                     {
@@ -448,7 +441,6 @@ main()
                                     library[libraryCount++] = n - 1;
                                     gameSold[n - 1]++;
 
-                                    // HISTORY FOR LAST 5 PURCHASES
                                     if (historyCount < 5)
                                     {
                                         history[historyCount] = n - 1;
@@ -467,7 +459,7 @@ main()
                                 }
                             }
 
-                            else if (userAccountOption == "3") // To refund games
+                            else if (userAccountOption == "3")
                             {
                                 system("cls");
                                 cout << "---------------------------------------------------" << endl;
@@ -490,7 +482,7 @@ main()
                                 libraryCount--;
                             }
 
-                            else if (userAccountOption == "4") // To see Your library
+                            else if (userAccountOption == "4")
                             {
                                 system("cls");
                                 cout << "---------------------------------------------------" << endl;
@@ -503,7 +495,7 @@ main()
                                 }
                             }
 
-                            else if (userAccountOption == "5") // To search any game
+                            else if (userAccountOption == "5")
                             {
                                 system("cls");
                                 cout << "---------------------------------------------------" << endl;
@@ -532,7 +524,7 @@ main()
                                 }
                             }
 
-                            else if (userAccountOption == "6") // to sort your library games
+                            else if (userAccountOption == "6")
                             {
                                 for (int i = 0; i < gameCount; i++)
                                 {
@@ -558,12 +550,12 @@ main()
                                 cout << "Library Sorted.";
                             }
 
-                            else if (userAccountOption == "7") // To apply coupen
+                            else if (userAccountOption == "7")
                             {
                                 cout << "\nUse Coupon While Buying.\n 'SAVE10' For 10 Percent Discount.\n 'SAVE20' For 20 Percent Discount.";
                             }
 
-                            else if (userAccountOption == "8") // To see your last 5 pucrhaces history
+                            else if (userAccountOption == "8")
                             {
                                 system("cls");
                                 cout << "---------------------------------------------------" << endl;
@@ -576,7 +568,7 @@ main()
                                     cout << i + 1 << ". " << gameNames[history[i]] << endl;
                                 }
                             }
-                            else if (userAccountOption == "9") // account settings for changing username and pasword
+                            else if (userAccountOption == "9")
                             {
                                 system("cls");
                                 cout << "---------------------------------------------------" << endl;
@@ -586,7 +578,7 @@ main()
                                 cout<<"\n You Can Change Your Username And Password Here."<<endl;
                                 cout<<"\nUnfortunately This Option Is Not Available Right Now"<<endl;
                             }
-                            else if (userAccountOption == "10") // check wallet for user balance 
+                            else if (userAccountOption == "10")
                             {
                                 system("cls");
                                 cout << "---------------------------------------------------" << endl;
@@ -597,7 +589,7 @@ main()
                                 cout<<"\nUnfortunately This Option Is Not Available Right Now"<<endl;
                             }
 
-                            else if (userAccountOption == "0") // to log out
+                            else if (userAccountOption == "0")
                             {
                                 break;
                             }
@@ -617,7 +609,7 @@ main()
                         getch();
                     }
                 }
-                else if (userOption == "0") // to return to menu
+                else if (userOption == "0")
                 {
                     cout << "\nReturning To Main Menu";
                     break;
@@ -625,7 +617,6 @@ main()
             }
         }
 
-        // EXIT CODE
         else if (mainOption == "0")
         {
             cout << "Thank You For Using Our Game Store Application!\nBe Proud To Be A Gamer :) ";

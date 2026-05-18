@@ -1,5 +1,6 @@
 #include <iostream>
 #include <conio.h>
+#include <fstream>  
 using namespace std;
 
 int totalGames = 20;
@@ -14,15 +15,90 @@ string gameNames[50] = {"Resident Evil 4", "Elden Ring", "Persona 5 Royal", "Sek
 int gamePrices[50] = {5000, 7000, 6000, 6500, 4000, 5500, 6200, 6800, 3000, 7200,
                       7100, 3500, 3600, 7500, 5000, 4800, 5300, 6900, 6100, 5800};
 
+// USER DATA
 string usernames[20];
 string passwords[20];
 int userIndex = 0;
-int currentUser = -1; 
+int currentUser = -1; // i dont wanna put it 0 bcz maybe its user on 2 index logged in and it will not update so -1 is better
 
 int library[50];
 int libraryCount = 0;
 int history[5];
 int historyCount = 0;
+
+void saveGamesToFile()
+{
+    fstream file;
+    file.open("games.txt", ios::out);  
+    file << gameCount << "\n";
+    for (int i = 0; i < gameCount; i++)
+    {
+        file << gameNames[i] << "\n";
+        file << gamePrices[i] << "\n";
+        file << gameSold[i] << "\n";
+    }
+    file.close();
+}
+
+void loadGamesFromFile()
+{
+    fstream file;
+    file.open("games.txt", ios::in); 
+    file >> gameCount;
+
+    for (int i = 0; i < gameCount; i++)
+    {
+        getline(file, gameNames[i]);
+        file >> gamePrices[i];
+        file >> gameSold[i];
+    }
+    file.close();
+}
+
+
+void saveUserToFile(string username, string password)
+{
+    fstream file;
+    file.open("users.txt", ios::app);
+    file << username << "\n";
+    file << password << "\n";
+    file.close();
+}
+
+void loadUsersFromFile()
+{
+    fstream file;
+    file.open("users.txt", ios::in); 
+    while (file >> usernames[userIndex] >> passwords[userIndex])
+    {
+        userIndex++;
+    }
+    file.close();
+}
+
+void saveLibraryToFile()
+{
+    fstream file;
+    file.open("library.txt", ios::out);
+    file << libraryCount << "\n";
+    for (int i = 0; i < libraryCount; i++)
+    {
+        file << library[i] << "\n";
+    }
+    file.close();
+}
+
+void loadLibraryFromFile()
+{
+    fstream file;
+    file.open("library.txt", ios::in);
+    file >> libraryCount;
+    for (int i = 0; i < libraryCount; i++)
+    {
+        file >> library[i];
+    }
+    file.close();
+}
 
 void showHeader();
 
@@ -51,6 +127,10 @@ void userArea();
 
 main()
 {
+    loadGamesFromFile();
+    loadUsersFromFile();
+    loadLibraryFromFile();
+
     system("cls");
     system("color 60");
     showHeader();
@@ -225,6 +305,7 @@ void adminAddGame()
     cout << "Enter Game Price : ";
     cin >> gamePrices[gameCount];
     gameCount++;
+    saveGamesToFile(); 
     cout << "Game Name And Price Has Been Added Successfully.";
 }
 
@@ -244,6 +325,7 @@ void adminUpdatePrice()
     cout << "\nOld Price For This Game Is : Rs" << gamePrices[n - 1]; // minus 1 cuz index starts with 0
     cout << "\nEnter New Price For This Game : ";
     cin >> gamePrices[n - 1];
+    saveGamesToFile(); // price willl be updated as well in file
     cout << "\nGame Price Has Been Updated Successfully.";
 }
 
@@ -269,6 +351,7 @@ void adminDeleteGame()
         gameSold[i] = gameSold[i + 1];
     }
     gameCount--;
+    saveGamesToFile();
 
     cout << "\nGame Has Been Deleted Successfully.";
 }
@@ -319,6 +402,7 @@ void adminSortGames()
             }
         }
     }
+    saveGamesToFile();
     cout << "\nGames List Has Been Sorted In An Accending Order Of Price.";
 }
 
@@ -334,6 +418,7 @@ void adminTotalSales()
 
 void adminMostPopular()
 {
+    //might not work properly cuz double user entries are not fully programmed yet i am working on it
     int max = 0;
     for (int i = 1; i < gameCount; i++)
     {
@@ -397,6 +482,7 @@ void userSignUp()
     cin >> usernames[userIndex];
     cout << "Password : ";
     cin >> passwords[userIndex];
+    saveUserToFile(usernames[userIndex], passwords[userIndex]);
     userIndex++;
     cout << "\nAccount Created!";
     getch();
@@ -591,6 +677,8 @@ void userBuyGame()
             history[4] = n - 1;
         }
 
+        saveLibraryToFile();
+
         cout << "Game Bought After Discount Only For : Rs" << price << endl;
     }
 }
@@ -612,6 +700,7 @@ void userRefundGame()
         library[i] = library[i + 1];
     }
     libraryCount--;
+    saveLibraryToFile();
 }
 
 void userViewLibrary()
@@ -683,7 +772,3 @@ void userViewHistory()
         cout << i + 1 << ". " << gameNames[history[i]] << endl;
     }
 }
-
-
-
-
